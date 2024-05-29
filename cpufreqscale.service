@@ -1,0 +1,9 @@
+[Unit]
+Description=dynamic adjust /sys/devices/system/cpu/cpufreq/policy*/scaling_max_freq for poversaving
+
+[Service]
+Type=simple
+ExecStart=cpufreqscale -c /etc/cpufreqscale/cpufreqscale.json
+
+[Install]
+WantedBy=multi-user.target
