@@ -147,6 +147,11 @@ bool parser_config_file(const char *file_path, std::vector<CpuGroupSetting> &ref
     rapidjson::Document doc;
     doc.ParseStream<rapidjson::kParseCommentsFlag>(isw);
 
+    if(doc.HasParseError() == true)
+    {
+        return false;
+    }
+
     // 解析global项
     if (doc.HasMember("global") == true && doc["global"].IsObject() == true && doc["global"].HasMember("number") == false)
     {

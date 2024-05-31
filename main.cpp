@@ -26,6 +26,10 @@ int main(int argc, char *argv[])
         pcg = std::unique_ptr<CpuGroup>(new CpuGroup(cgs));
         pcg->start();
     }
+    else
+    {
+        printf("\nparser json config failed.\n");
+    }
 
     printf("\ncpufreqscale exited.\n");
 
